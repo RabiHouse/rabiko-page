@@ -25,12 +25,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true # ← これによりGemfileのパッケージが自動インストールされます
+          bundler-cache: true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
-        # ★必ず 'bundle exec' を通してJekyllをビルドさせます
+        # ★ここで github-pages gem を経由せず、直接jekyll buildを走らせます
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
