@@ -171,9 +171,12 @@ a:hover {
 
 /* ---------- 左のカラム（キャラクター紹介） ---------- */
 .author__avatar img {
+  box-sizing: border-box;
   border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 0 0 4px var(--rb-main);
+  border: 5px solid var(--rb-main);
+  padding: 4px;
+  background: #fff;
+  box-shadow: none;
 }
 
 .author__name {
