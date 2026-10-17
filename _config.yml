@@ -31,10 +31,7 @@ author:
   avatar: "/assets/images/rabiko.webp"
   bio: "💖らびこ💖の毎日のSNS投稿とおすすめのアイテムをご紹介しています🐰✨💐🪄"
   links:
-    - label: "Bluesky"
-      icon: "fas fa-fw fa-link"
-      url: "https://bsky.app/profile/rabbitflowerdiary.com"
-    - label: "ブログ"
+    - label: "うさの国"
       icon: "fas fa-fw fa-link"
       url: "https://www.rabbitflowerdiary.com/"
     - label: "SUZURI"
@@ -46,10 +43,7 @@ atom_feed:
   hide: true                       # 「FEED」のリンクを消す
 footer:
   links:                           # 代わりに、かわいいリンクを並べる
-    - label: "🐰 Bluesky"
-      icon: "fas fa-fw fa-link"
-      url: "https://bsky.app/profile/rabbitflowerdiary.com"
-    - label: "🌸 ブログ"
+    - label: "🐰 うさの国"
       icon: "fas fa-fw fa-link"
       url: "https://www.rabbitflowerdiary.com/"
     - label: "🛍️ SUZURI"

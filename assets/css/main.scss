@@ -198,6 +198,11 @@ a:hover {
   word-break: break-word;
 }
 
+.sidebar {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
 @media (max-width: 1023px) {
   .sidebar {
     padding-right: 1em;
@@ -425,24 +430,29 @@ a.book-turn__link:hover {
    今日のうさみくじ
    ========================================================== */
 .usamikuji {
-  margin: 1.2em 0;
-  padding: 1em;
+  margin: 1.4em 0;
+  padding: 1.1em 0.9em 1.3em;
   text-align: center;
   background: #fff;
   border: 3px dotted var(--rb-main);
   border-radius: 20px;
 }
 
-.usamikuji__title {
-  margin: 0 0 0.6em;
+.usamikuji .usamikuji__title {
+  margin: 0 0 1em;
   font-family: var(--rb-font-nav);
   font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--rb-text);
 }
 
-.usamikuji__btn {
-  padding: 0.4em 1.3em;
+.usamikuji .usamikuji__btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35em 1.2em;
   font-family: var(--rb-font);
+  font-size: 0.95em;
   font-weight: 700;
   color: #fff;
   background: var(--rb-lilac);

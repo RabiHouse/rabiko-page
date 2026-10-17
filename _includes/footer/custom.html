@@ -106,10 +106,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var box = document.createElement('div');
   box.className = 'usamikuji';
   box.innerHTML =
-    '<h3 class="usamikuji__title">🐰 今日のうさみくじ</h3>' +
+    '<div class="usamikuji__title">🐰 今日のうさみくじ</div>' +
     '<button type="button" class="usamikuji__btn">ひいてみる</button>' +
     '<div class="usamikuji__result" aria-live="polite"></div>';
-  side.appendChild(box);
+  // 自己紹介のすぐ下（リンクの上）に置く。見つからなければ一番下
+  var anchor = side.querySelector('.author__urls-wrapper');
+  if (anchor && anchor.parentNode) {
+    anchor.parentNode.insertBefore(box, anchor);
+  } else {
+    side.appendChild(box);
+  }
 
   var btn = box.querySelector('.usamikuji__btn');
   var result = box.querySelector('.usamikuji__result');
