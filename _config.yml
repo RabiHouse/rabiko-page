@@ -1,5 +1,6 @@
 # ===== サイトの基本設定 =====
 title: 💖らびこ💖のブログ
+name: "Rabbitflowerdiary"          # フッターの © の後に出る名前
 email: rabiko@rabbitflowerdiary.com
 description: >-
   💖らびこ💖の毎日のSNS投稿とおすすめのアイテムをご紹介しています🐰✨💐🪄
@@ -29,6 +30,21 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://www.rabbitflowerdiary.com/"
     - label: "SUZURI"
+      icon: "fas fa-fw fa-link"
+      url: "https://suzuri.jp/Rabbitflower"
+
+# ===== フッター =====
+atom_feed:
+  hide: true                       # 「FEED」のリンクを消す
+footer:
+  links:                           # 代わりに、かわいいリンクを並べる
+    - label: "🐰 Bluesky"
+      icon: "fas fa-fw fa-link"
+      url: "https://bsky.app/profile/rabbitflowerdiary.com"
+    - label: "🌸 ブログ"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.rabbitflowerdiary.com/"
+    - label: "🛍️ SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"
 
