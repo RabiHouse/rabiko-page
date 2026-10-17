@@ -155,9 +155,18 @@ a:hover {
 }
 
 .archive__subtitle {
+  display: inline-block;
+  margin: 1.5em 0 0.8em;
+  padding: 0.25em 1.1em;
+  font-family: var(--rb-font-nav);
   color: var(--rb-text);
-  border-bottom: 4px dotted var(--rb-main);
-  padding-bottom: 0.3em;
+  border-bottom: none;
+  border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
+  background-color: #fff3f6;
+  background-image:
+    linear-gradient(90deg, var(--rb-gingham) 50%, transparent 50%),
+    linear-gradient(var(--rb-gingham) 50%, transparent 50%);
+  background-size: 12px 12px;
 }
 
 /* ---------- 左のカラム（キャラクター紹介） ---------- */
@@ -201,16 +210,55 @@ a:hover {
   box-shadow: 0 2px 0 var(--rb-lilac-deep);
 }
 
-/* ---------- フッター（ピンクの点線） ---------- */
+/* ---------- フッター（ピンクの点線＋ギンガムチェックの帯） ---------- */
 .page__footer {
   background: var(--rb-bg);
   color: var(--rb-text);
   border-top: 4px dotted var(--rb-main);
 }
 
+.page__footer::before {
+  content: "";
+  display: block;
+  height: 14px;
+  background-color: #fff3f6;
+  background-image:
+    linear-gradient(90deg, var(--rb-gingham) 50%, transparent 50%),
+    linear-gradient(var(--rb-gingham) 50%, transparent 50%);
+  background-size: 14px 14px;
+}
+
 .page__footer a,
 .page__footer-copyright {
   color: var(--rb-text);
+}
+
+/* フッターのリンク：ギンガムチェックのふわっとしたボタン */
+.page__footer-follow ul li {
+  text-transform: none;
+}
+
+.page__footer-follow ul li a {
+  display: inline-block;
+  margin: 0.3em 0.25em;
+  padding: 0.3em 1em;
+  font-family: var(--rb-font-nav);
+  font-size: 1em;
+  color: var(--rb-text);
+  border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
+  background-color: #fff3f6;
+  background-image:
+    linear-gradient(90deg, var(--rb-gingham) 50%, transparent 50%),
+    linear-gradient(var(--rb-gingham) 50%, transparent 50%);
+  background-size: 12px 12px;
+}
+
+.page__footer-follow ul li a:hover {
+  color: var(--rb-main-deep);
+}
+
+.page__footer-follow ul li a i {
+  display: none;
 }
 
 /* ---------- Blueskyから取り込んだ投稿の中身 ---------- */
