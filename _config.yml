@@ -33,7 +33,7 @@ author:
   links:
     - label: "うさの国"
       icon: "fas fa-fw fa-link"
-      url: "https://www.rabbitflowerdiary.com/"
+      url: "https://world.rabbitflowerdiary.com/"
     - label: "SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"
@@ -45,7 +45,7 @@ footer:
   links:                           # 代わりに、かわいいリンクを並べる
     - label: "🐰 うさの国"
       icon: "fas fa-fw fa-link"
-      url: "https://www.rabbitflowerdiary.com/"
+      url: "https://world.rabbitflowerdiary.com/"
     - label: "🛍️ SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"
