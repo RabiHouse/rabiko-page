@@ -185,6 +185,22 @@ a:hover {
   line-height: 1.8;
 }
 
+/* スマホで左カラムの文字が右端で切れないようにする */
+.sidebar,
+.author__content,
+.author__bio {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    padding-right: 1em;
+  }
+}
+
 .sidebar .author__urls a {
   color: var(--rb-link);
 }
