@@ -1,4 +1,20 @@
 <script>
+/* 外部サイトへのリンクは、すべて新しいタブで開く */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    try {
+      var u = new URL(a.href);
+      if (u.host !== location.host) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    } catch (e) {}
+  });
+});
+</script>
+
+<script>
+/* Blueskyの動画（HLS）を再生する */
 document.addEventListener('DOMContentLoaded', function () {
   var videos = document.querySelectorAll('video[data-hls]');
   if (!videos.length) return;
