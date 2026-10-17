@@ -1,3 +1,8 @@
+<!-- ぴょんと上に戻るボタン -->
+<button type="button" class="pyon-btn" id="pyon-btn" aria-label="ページの一番上にもどる" title="ぴょん！">
+  <img src="{{ '/assets/images/rabiko-logo.webp' | relative_url }}" alt="" width="56" height="56">
+</button>
+
 <script>
 /* 外部サイトへのリンクは、すべて新しいタブで開く */
 document.addEventListener('DOMContentLoaded', function () {
@@ -40,5 +45,84 @@ document.addEventListener('DOMContentLoaded', function () {
   s.onload = setup;
   s.onerror = function () { console.log('hls.js の読み込みに失敗しました'); setup(); };
   document.head.appendChild(s);
+});
+</script>
+
+<script>
+/* ぴょんボタン：少しスクロールしたら出てきて、押すと上に戻る */
+(function () {
+  var btn = document.getElementById('pyon-btn');
+  if (!btn) return;
+
+  function toggle() {
+    btn.classList.toggle('is-show', window.scrollY > 300);
+  }
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+
+  btn.addEventListener('click', function () {
+    btn.classList.add('is-hop');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(function () { btn.classList.remove('is-hop'); }, 600);
+  });
+})();
+</script>
+
+<script>
+/* 今日のうさみくじ：左のカラムに置く（1日1回、同じ日は同じ結果） */
+document.addEventListener('DOMContentLoaded', function () {
+  var side = document.querySelector('.sidebar');
+  if (!side) return;
+
+  // ▼ 結果の文章はここで自由に書き換えられます
+  var fortunes = [
+    { rank: '大吉', msg: 'すてきなことがたくさん待っているわ💖 にんじんも多めにもらえるかも🥕' },
+    { rank: '大吉', msg: '今日は何をしてもうまくいく日よ✨ 思いきって一歩ふみだしてみてね🐰' },
+    { rank: '中吉', msg: 'やさしい気持ちが、まわりをぽかぽかにする日よ🌸' },
+    { rank: '中吉', msg: 'お花のいい香りがする、のんびりした一日になるわ💐' },
+    { rank: '小吉', msg: 'ちいさな幸せを見つけられる日よ。空を見上げてみてね☁️' },
+    { rank: '小吉', msg: 'おやつがいつもよりおいしく感じる日になるわ🍪' },
+    { rank: '吉',   msg: 'ゆっくり深呼吸すると、いいことが追いかけてくるわ🌷' },
+    { rank: '末吉', msg: 'ちょっとひと休みするといい日よ。ふかふかのお布団で休んでね🌙' }
+  ];
+  var items = [
+    'にんじん🥕', 'お花💐', 'クローバー🍀', 'リボン🎀',
+    'あたたかいお茶🍵', '絵本📖', 'クッキー🍪', 'ぬいぐるみ🧸'
+  ];
+
+  // 日付（日本時間）から、毎日ちがう結果を決める
+  function hash(s) {
+    var h = 2166136261;
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+  var key = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  var fortune = fortunes[hash(key + 'f') % fortunes.length];
+  var item = items[hash(key + 'i') % items.length];
+
+  var box = document.createElement('div');
+  box.className = 'usamikuji';
+  box.innerHTML =
+    '<h3 class="usamikuji__title">🐰 今日のうさみくじ</h3>' +
+    '<button type="button" class="usamikuji__btn">ひいてみる</button>' +
+    '<div class="usamikuji__result" aria-live="polite"></div>';
+  side.appendChild(box);
+
+  var btn = box.querySelector('.usamikuji__btn');
+  var result = box.querySelector('.usamikuji__result');
+
+  btn.addEventListener('click', function () {
+    result.innerHTML =
+      '<p class="usamikuji__rank">' + fortune.rank + '</p>' +
+      '<p>' + fortune.msg + '</p>' +
+      '<p class="usamikuji__item">ラッキーアイテム：' + item + '</p>';
+    result.classList.remove('is-open');
+    void result.offsetWidth;          // アニメーションをやり直す
+    result.classList.add('is-open');
+    btn.textContent = 'もういちど見る';
+  });
 });
 </script>
