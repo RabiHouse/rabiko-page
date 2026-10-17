@@ -5,7 +5,10 @@ email: rabiko@rabbitflowerdiary.com
 description: >-
   💖らびこ💖の毎日のSNS投稿とおすすめのアイテムをご紹介しています🐰✨💐🪄
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.rabbitflowerdiary.com"   # ブログのアドレス
+
+# SNSなどで共有したときに出る画像（assets/images/og-image.jpg）
+og_image: "/assets/images/og-image.jpg"
 
 # ===== テーマ =====
 theme: minimal-mistakes-jekyll
@@ -13,6 +16,11 @@ minimal_mistakes_skin: "default"   # 色は assets/css/main.scss で上書きし
 
 plugins:
   - jekyll-include-cache
+  - jekyll-paginate
+
+# ===== トップのページ分け（1ページに10件） =====
+paginate: 10
+paginate_path: "/page:num/"
 
 # 左上のタイトルの横に出る、小さな丸い画像
 logo: "/assets/images/rabiko-logo.webp"
@@ -23,9 +31,12 @@ author:
   avatar: "/assets/images/rabiko.webp"
   bio: "💖らびこ💖の毎日のSNS投稿とおすすめのアイテムをご紹介しています🐰✨💐🪄"
   links:
-    - label: "うさの国"
+    - label: "Bluesky"
       icon: "fas fa-fw fa-link"
-      url: "https://rabbitflowerdiary.com"
+      url: "https://bsky.app/profile/rabbitflowerdiary.com"
+    - label: "ブログ"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.rabbitflowerdiary.com/"
     - label: "SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"
@@ -35,9 +46,12 @@ atom_feed:
   hide: true                       # 「FEED」のリンクを消す
 footer:
   links:                           # 代わりに、かわいいリンクを並べる
-    - label: "🐰 うさの国"
+    - label: "🐰 Bluesky"
       icon: "fas fa-fw fa-link"
-      url: "https://rabbitflowerdiary.com"
+      url: "https://bsky.app/profile/rabbitflowerdiary.com"
+    - label: "🌸 ブログ"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.rabbitflowerdiary.com/"
     - label: "🛍️ SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"

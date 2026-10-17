@@ -1,0 +1,14 @@
+{% if page.previous or page.next %}
+<nav class="book-turn" aria-label="ページをめくる">
+  {% if page.next %}
+    <a class="book-turn__link" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | strip_html | escape }}">◀ 次のページ</a>
+  {% else %}
+    <span class="book-turn__link is-disabled">◀ 次のページ</span>
+  {% endif %}
+  {% if page.previous %}
+    <a class="book-turn__link" href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title | strip_html | escape }}">前のページ ▶</a>
+  {% else %}
+    <span class="book-turn__link is-disabled">前のページ ▶</span>
+  {% endif %}
+</nav>
+{% endif %}

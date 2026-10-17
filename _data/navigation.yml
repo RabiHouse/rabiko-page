@@ -1,2 +1,4 @@
-# 画面上部のメニュー（「Quick-Start Guide」を消すため、空にしています）
-main: []
+# 画面上部のメニュー
+main:
+  - title: "もくじ"
+    url: /mokuji/

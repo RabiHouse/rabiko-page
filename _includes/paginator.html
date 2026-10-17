@@ -1,0 +1,15 @@
+{% if paginator.total_pages > 1 %}
+<nav class="book-turn" aria-label="ページ送り">
+  {% if paginator.next_page %}
+    <a class="book-turn__link" href="{{ paginator.next_page_path | relative_url }}">◀ 次のページ</a>
+  {% else %}
+    <span class="book-turn__link is-disabled">◀ 次のページ</span>
+  {% endif %}
+  <span class="book-turn__now">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.previous_page %}
+    <a class="book-turn__link" href="{{ paginator.previous_page_path | relative_url }}">前のページ ▶</a>
+  {% else %}
+    <span class="book-turn__link is-disabled">前のページ ▶</span>
+  {% endif %}
+</nav>
+{% endif %}
