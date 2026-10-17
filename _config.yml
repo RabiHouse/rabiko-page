@@ -38,12 +38,9 @@ atom_feed:
   hide: true                       # 「FEED」のリンクを消す
 footer:
   links:                           # 代わりに、かわいいリンクを並べる
-    - label: "🐰 Bluesky"
+    - label: "🐰 うさの国"
       icon: "fas fa-fw fa-link"
-      url: "https://bsky.app/profile/rabbitflowerdiary.com"
-    - label: "🌸 ブログ"
-      icon: "fas fa-fw fa-link"
-      url: "https://www.rabbitflowerdiary.com/"
+      url: "https://rabbitflowerdiary.com"
     - label: "🛍️ SUZURI"
       icon: "fas fa-fw fa-link"
       url: "https://suzuri.jp/Rabbitflower"
